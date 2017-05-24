@@ -19,6 +19,7 @@ function onReady(){
           console.log(response);
           if(response.data.length === 0){
             $('.container').append('<div><p>Whoopsies</p><img src= https://media.giphy.com/media/80TEu4wOBdPLG/giphy.gif?response_id=5925e85668c66efd24a18672><button class="rmvBtn">Remove</button></div>');
+            $('#userInput').val('');
           } else {
           var searchResult = response.data[0].images.downsized.url;
           $('#userInput').val('');
