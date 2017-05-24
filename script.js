@@ -7,19 +7,22 @@ function onReady() {
   //listeners
   $('#searchBtn').on('click', clickSearch);
 
-  $(document).on('keydown', keyDownHandler);
+  $('form').on('submit', clickSearch);
+
   // end of on click
-  $(document).on('click', '.rmvBtn', function(){
+  $('#supercontain').on('click', '.rmvBtn', function(){
     $(this).parent().remove();
   });
-  $(document).on('click', '.favBtn', function(){
+  $('.container').on('click', '.favBtn', function(){
     $(this).parent().appendTo('.favorites');
     $(this).remove();
 
   });
 
  // end of onReady
-function clickSearch(){
+function clickSearch(e){
+  e.preventDefault();
+  console.log('click');
     if($('#userInput').val() === '' || $('#userInput').val() === undefined){
       alert('OhmyGawd!');
     } else {
@@ -52,9 +55,3 @@ function clickSearch(){
     } // end of else
   }
 }
-
-function keyDownHandler(e) {
-  if(e.keycode == 13){
-    clickSearch();
-  }
-}//end keyDownHandler
