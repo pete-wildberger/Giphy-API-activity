@@ -14,6 +14,11 @@ function onReady() {
     }).on('mouseenter', '.squares', function () {
          $(this).find(":button").show();
      });
+  $('#supercontain').on('mouseenter', ':button', function () {
+           $(this).css('background-color', '#320A28');
+       }).on('mouseleave', ':button', function () {
+           $(this).css('background-color', '#CB9173');
+       });
   // end of on click
   $('#supercontain').on('click', '#rmvBtn', function(){
     $(this).parent().remove();

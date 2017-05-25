@@ -22,6 +22,9 @@ img{
 body{
   background-color: #E0D68A;
 }
+.active {
+    background-color: #320A28;
+}
 .squares {
   display: block;
   height:330px;
