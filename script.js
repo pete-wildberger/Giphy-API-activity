@@ -9,11 +9,16 @@ function onReady() {
 
   $('form').on('submit', clickSearch);
 
+  $('#supercontain').on('mouseleave', '.squares', function () {
+      $(this).find(":button").hide();
+    }).on('mouseenter', '.squares', function () {
+         $(this).find(":button").show();
+     });
   // end of on click
-  $('#supercontain').on('click', '.rmvBtn', function(){
+  $('#supercontain').on('click', '#rmvBtn', function(){
     $(this).parent().remove();
   });
-  $('.container').on('click', '.favBtn', function(){
+  $('.container').on('click', '#favBtn', function(){
     $(this).parent().appendTo('.favorites');
     $(this).remove();
 
@@ -42,8 +47,8 @@ function clickSearch(e){
           var searchResult = response.data[0].images.downsized.url;
           var imgDiv = '<div class="squares">';
           imgDiv += '<img src="' + searchResult + '">';
-          imgDiv += '<button class="rmvBtn">Remove</button>';
-          imgDiv += '<button class="favBtn">Favorites</button>';
+          imgDiv += '<button class="divBtn" id="rmvBtn">Remove</button>';
+          imgDiv += '<button class="divBtn" id="favBtn">Favorites</button>';
           imgDiv += '</div>';
 
           $('#userInput').val('');

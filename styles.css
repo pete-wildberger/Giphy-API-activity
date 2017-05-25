@@ -40,7 +40,7 @@ body{
   text-align: center;
   background-color: #8E443D;
 }
-.favBtn{
+#favBtn{
   height: 30px;
   width: 145px;
   margin-left: 10px;
@@ -48,17 +48,19 @@ body{
   color: white;
   text-align: center;
   background-color: #CB9173;
+  display: none;
 
 }
 input{
   height: 30px;
   width: 300px;
 }
-.rmvBtn {
+#rmvBtn {
   height: 30px;
   width: 145px;
   border: none;
   color: white;
   text-align: center;
   background-color: #CB9173;
+  display: none;
 }
